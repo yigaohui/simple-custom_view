@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <RelativeLayout 
+        android:id="@+id/rel_top"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:background="@drawable/level3"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="5dp"
+            />
+
+         <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel2"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginBottom="55dp"
+            />
+
+         <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel3"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="67dp"
+            android:layout_marginBottom="87dp"
+            />
+
+         <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            />
+
+         <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel5"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="67dp"
+            android:layout_marginBottom="87dp"
+            />
+
+         <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel6"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="55dp"
+            />
+
+          <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel7"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout 
+        android:id="@+id/rel_middle"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:background="@drawable/level2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_search"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <Button 
+            android:id="@+id/btn_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_menu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            />
+
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_myyouku"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout 
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/level1"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+
+        <Button 
+            android:id="@+id/btn_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_home"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

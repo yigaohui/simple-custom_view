@@ -1,0 +1,4 @@
+1477663927091	Convert local variable 'mNumber' to field
+1477663929229	Convert local variable 'findViewById' to field
+1477664309476	Convert local variable 'contentView' to field
+1477701025576	Convert local variable 'popupWindow' to field

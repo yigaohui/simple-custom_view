@@ -1,0 +1,8 @@
+1477657162566	Convert local variable 'mViewPager' to field
+1477658252817	Convert local variable 'mTv' to field
+1477658309021	Extract method 'viewChangeListener'
+1477659209202	Convert local variable 'mLl_dots' to field
+1477661086374	Convert local variable 'MAXADAPTERCOUNT' to field
+1477664119887	Delete elements
+1477740302305	Copy files
+1477741922307	Copy files

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;com.example.pulltorefreshlistview.MainActivity.initView().mListView&apos; in &apos;com.example.pulltorefreshlistview.MainActivity.initView()&apos; to field&#x0D;&#x0A;- Original project: &apos;刷新头&apos;&#x0D;&#x0A;- Original element: &apos;com.example.pulltorefreshlistview.MainActivity.initView().mListView&apos;&#x0D;&#x0A;- Field name: &apos;mListView&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;mListView&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;com.example.pulltorefreshlistview{MainActivity.java" name="mListView" selection="448 76" stamp="1477738135398" static="false" version="1.0" visibility="2"/>
+</session>

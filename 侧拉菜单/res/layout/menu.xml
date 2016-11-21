@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_bg" >
+
+    <!-- ScrollView : 当界面显示数据，显示不完的时候，可以扩展界面，可以通过滑动实现界面多余数据的显示 ，只能有一个子控件 -->
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_news"
+            android:text="新闻" />
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_read"
+            android:text="订阅" />
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_local"
+            android:text="本地" />
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_ties"
+            android:text="跟帖" />
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_pics"
+            android:text="图片" />
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_ugc"
+            android:text="话题" />
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_vote"
+            android:text="投票" />
+
+        <TextView
+            style="@style/MenuTextViewStyle"
+            android:drawableLeft="@drawable/tab_focus"
+            android:text="聚合阅读" />
+    </LinearLayout>
+
+</ScrollView>

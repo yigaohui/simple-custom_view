@@ -1,0 +1,155 @@
+package com.gaofe.view;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Scroller;
+
+public class MySlidingMenu extends ViewGroup {
+
+	private View menuView;
+	private View mainView;
+	private int menuWidth;
+	private int downX;
+	private int nextStartMoveX=0;
+	private int distance;
+	private Scroller scroller;
+	private int moveX;
+
+	public MySlidingMenu(Context context) {
+		this(context,null);
+	}
+
+	public MySlidingMenu(Context context, AttributeSet attrs) {
+		this(context, attrs,-1);
+	}
+
+	public MySlidingMenu(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+
+		scroller = new Scroller(context);
+	}
+
+	
+
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		// TODO Auto-generated method stub
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+		menuView = getChildAt(0);
+		mainView = getChildAt(1);
+		menuWidth = menuView.getLayoutParams().width;
+		menuView.measure(menuWidth, heightMeasureSpec);
+		mainView.measure(widthMeasureSpec, heightMeasureSpec);
+	}
+
+	@Override
+	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+		menuView.layout(l - menuWidth, t, l, b);
+		mainView.layout(l, t, r, b);
+	}
+
+	@Override
+	protected void onDraw(Canvas canvas) {
+		// TODO Auto-generated method stub
+		super.onDraw(canvas);
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			downX = (int) event.getX();
+			break;
+		case MotionEvent.ACTION_MOVE:
+			moveX = (int) event.getX();
+			distance = nextStartMoveX + moveX - downX;
+
+			if (distance > menuWidth) {
+				distance = menuWidth;
+			}
+			if (distance < 0) {
+				distance = 0;
+			}
+			myScrollto(distance);
+			break;
+		case MotionEvent.ACTION_UP:
+			
+
+			if (distance < menuWidth / 2) {
+				nextStartMoveX = 0;
+			} else {
+				
+				nextStartMoveX = menuWidth;
+			}
+			
+			/**
+			 * if (distance < menuwidth / 2) {
+				// myScrollTo(0);
+				nextStartIndx = 0;
+			} else {
+				// myScrollTo(menuwidth);
+				nextStartIndx = menuwidth;
+			}
+			 */
+			 //myScrollto(distance);
+			scrollToTime(distance, nextStartMoveX);
+			break;
+
+		default:
+			break;
+		}
+		return true;
+	}
+
+	private void scrollToTime(int startX, int toX) {
+		
+		int dx=toX-startX;
+		
+		int time=Math.abs(1000/menuWidth *dx);
+		scroller.startScroll(startX, 0, dx, 0, time);
+		invalidate();
+
+	}
+	@Override
+	public void computeScroll() {
+		if (scroller.computeScrollOffset()) {
+			int currX = scroller.getCurrX();
+			myScrollto(currX);
+			invalidate();
+		}
+
+		super.computeScroll();
+	}
+
+	private void myScrollto(int distance) {
+		scrollTo(-distance, 0);
+	}
+	
+	
+		public void toggle() {
+			// 判断移动距离，如果是0，是关闭状态，执行打开，如果是菜单页的宽度，是打开的状态，执行关闭
+			// 获取scrollTo移动距离，也是正负相反
+			if (myGetScroll() == 0) {
+				// 是关闭状态，执行打开
+				distance = 0;
+				nextStartMoveX = menuWidth;
+			} else {
+				// 是打开的状态，执行关闭
+				distance = menuWidth;
+				nextStartMoveX = 0;
+			}
+			scrollToTime(distance, nextStartMoveX);
+
+		}
+		private float myGetScroll() {
+			return -getScrollX();
+		}
+
+
+}

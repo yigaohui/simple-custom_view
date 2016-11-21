@@ -1,0 +1,98 @@
+package com.gaofe.view;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class MySlidingMenu extends ViewGroup {
+
+	private View menuView;
+	private View mainView;
+	private int menuWidth;
+	private float downX;
+	private int nextStartMoveX;
+	private int distance;
+	public MySlidingMenu(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MySlidingMenu(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MySlidingMenu(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		// TODO Auto-generated method stub
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+		menuView = getChildAt(0);
+		mainView = getChildAt(1);
+		menuWidth = menuView.getLayoutParams().width;
+		menuView.measure(menuWidth, heightMeasureSpec);
+
+		mainView.measure(widthMeasureSpec, heightMeasureSpec);
+	}
+
+	@Override
+	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+		menuView.layout(l - menuWidth, t, l, b);
+		mainView.layout(l, t, r, b);
+	}
+
+	@Override
+	protected void onDraw(Canvas canvas) {
+		// TODO Auto-generated method stub
+		super.onDraw(canvas);
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			downX = event.getX();
+			break;
+		case MotionEvent.ACTION_MOVE:
+			float moveX = event.getX();
+			distance = (int) (nextStartMoveX+moveX-downX);
+			
+			if(distance >menuWidth) {
+				distance=menuWidth;
+			} 
+			if(distance <0) {
+				distance=0;
+			}
+			myScrollto(distance);
+			break;
+		case MotionEvent.ACTION_UP:
+			nextStartMoveX=distance;
+			
+			if(distance>menuWidth/2) {
+				nextStartMoveX=menuWidth;
+			} else {
+				nextStartMoveX=0;
+			}
+			myScrollto(distance);
+			break;
+
+		default:
+			break;
+		}
+		return true;
+	}
+
+	private void myScrollto(int distance) {
+		scrollTo(-distance, 0);
+	}
+
+}

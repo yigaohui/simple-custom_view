@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   	>
+    <com.itheima.slidingmenu.view.MySlidingMenu
+        android:id="@+id/myslidingmenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <include layout="@layout/menu"/>
+        <!-- include : 将一个布局文件嵌入到另一个布局文件中，相当于将一个布局文件中代码拷贝当前布局文件 -->
+        <include layout="@layout/main"/>
+        
+    </com.itheima.slidingmenu.view.MySlidingMenu>
+    
+</RelativeLayout>

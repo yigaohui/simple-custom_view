@@ -1,0 +1,6 @@
+1477740218939	Convert local variable 'mViewPager' to field
+1477741076521	Convert local variable 'mText' to field
+1477741759247	Convert local variable 'mLl_dots' to field
+1477742693776	Rename resource 'Drawable'
+1477742788778	Convert local variable 'currentSelectedView' to field
+1477744926863	Convert local variable 'maxCount' to field

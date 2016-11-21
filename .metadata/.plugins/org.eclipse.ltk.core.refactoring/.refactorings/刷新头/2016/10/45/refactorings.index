@@ -1,0 +1,11 @@
+1477891251044	Convert local variable 'view' to field
+1477891323679	Rename field 'headvView'
+1477891898554	Convert local variable 'downY' to field
+1477892450503	Convert local variable 'measuredHeight' to field
+1477892963616	Convert local variable 'mArrow' to field
+1477893433715	Convert local variable 'up' to field
+1477893482115	Convert local variable 'down' to field
+1477894844274	Convert local variable 'mTv' to field
+1477895199790	Convert local variable 'mProgress' to field
+1477898968181	Convert local variable 'footerView' to field
+1477899019017	Convert local variable 'measuredHeight2' to field

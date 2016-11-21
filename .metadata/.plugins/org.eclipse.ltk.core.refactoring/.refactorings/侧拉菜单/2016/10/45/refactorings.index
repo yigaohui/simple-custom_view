@@ -1,0 +1,16 @@
+1477904033159	Move file
+1477904038078	Move file
+1477904075522	Move folder
+1477904122757	Move package
+1477904128820	Move package
+1477912870667	Convert local variable 'menuView' to field
+1477912907821	Convert local variable 'mainView' to field
+1477913069741	Convert local variable 'menuWidth' to field
+1477913364028	Convert local variable 'downX' to field
+1477913806285	Convert local variable 'distance' to field
+1477915481652	Convert local variable 'scroller' to field
+1477917029545	Convert local variable 'moveX' to field
+1477918103616	Convert local variable 'mySlidingmenu' to field
+1477918129922	Convert local variable 'mBack' to field
+1477918512643	Convert local variable 'downY' to field
+1477918556971	Convert local variable 'moveY' to field
